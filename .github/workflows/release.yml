@@ -2,9 +2,6 @@ name: Main
 
 on:
   push:
-    branches:
-      - main
-      - develop
     tags:
       - "v*.*.*"
 
@@ -23,5 +20,5 @@ jobs:
         with:
           files: |
             Release.hash
-          prerelease: ${{ github.ref != 'main' }}
+          prerelease: ${{ endsWith(github.ref, 'beta') }}
 
