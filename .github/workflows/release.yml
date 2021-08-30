@@ -23,5 +23,5 @@ jobs:
         with:
           files: |
             Release.hash
-          prerelease: ${{ github.ref != "main" }}
+          prerelease: ${{ github.ref != 'main' }}
 
