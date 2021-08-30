@@ -12,14 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
-        run: echo ${{ github.sha }} > release.hash
+        run: echo ${{ github.sha }} > release-sha256.txt
       - name: Test
-        run: cat release.hash
+        run: cat release-sha256.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body_path: ${{ github.workspace }}/CHANGELOG.md
           files: |
-            release.hash
+            release-sha256.txt
           prerelease: ${{ contains(github.ref, '-beta.') }}
 
