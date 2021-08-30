@@ -12,13 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
-        run: echo ${{ github.sha }} > Release.hash
+        run: echo ${{ github.sha }} > release.hash
       - name: Test
-        run: cat Release.hash
+        run: cat release.hash
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          body_path: ${{ github.workspace }}/CHANGELOG.md
           files: |
-            Release.hash
+            release.hash
           prerelease: ${{ contains(github.ref, '-beta.') }}
 
