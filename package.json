@@ -4,7 +4,8 @@
   "packageManager": "yarn@3.0.1",
   "scripts": {
     "start": "node index.js",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prerelease": "standard-version --prerelease beta"
   },
   "dependencies": {
     "lodash": "^4.17.21"
