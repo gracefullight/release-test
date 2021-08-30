@@ -1,6 +1,9 @@
 {
   "name": "release-test",
   "packageManager": "yarn@3.0.1",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "lodash": "^4.17.21"
   }
