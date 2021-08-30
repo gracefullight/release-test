@@ -20,5 +20,5 @@ jobs:
         with:
           files: |
             Release.hash
-          prerelease: ${{ contains(github.ref, '.beta.') }}
+          prerelease: ${{ contains(github.ref, '-beta.') }}
 
